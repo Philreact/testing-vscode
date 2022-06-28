@@ -20,4 +20,4 @@ jobs:
       - name: Publish package on NPM
         run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: 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
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
