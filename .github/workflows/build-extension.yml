@@ -20,6 +20,6 @@ jobs:
       - name: Install dependencies and build
         run: npm install && npm run build:extension && vsce package
       - name: Publish package on NPM
-        run: npm version 0.0.2 && npm publish --access public
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
