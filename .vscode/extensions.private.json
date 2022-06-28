@@ -2,8 +2,8 @@
   "registries": [
     {
       "name": "My Private Registry",
-      "registry": "https://philravens.registry"
+      "registry": "https://registry.npmjs.org"
     }
   ],
-  "recommendations": ["garmin.example-extension"]
+  "recommendations": ["philravens.extension-test-trial"]
 }
