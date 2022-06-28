@@ -15,8 +15,10 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
+      - name: Install vsce
+        run: npm i -g vsce
       - name: Install dependencies and build
-        run: npm install && npm run build:extension
+        run: npm install && npm run build:extension && vsce publish
       - name: Publish package on NPM
         run: npm publish --access public
         env:
