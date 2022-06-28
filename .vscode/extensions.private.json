@@ -1,0 +1,9 @@
+{
+  "registries": [
+    {
+      "name": "My Private Registry",
+      "registry": "https://philravens.registry"
+    }
+  ],
+  "recommendations": ["garmin.example-extension"]
+}
