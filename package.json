@@ -1,6 +1,6 @@
 {
-  "name": "testtreeview",
-  "displayName": "TestTreeView",
+  "name": "extension-test-trial",
+  "displayName": "extension-test-trial",
   "description": "",
   "version": "0.0.1",
   "engines": {
