@@ -6,7 +6,6 @@
   "engines": {
     "vscode": "^1.66.0"
   },
-  "icon": "$(list-tree)",
   "repository": {
     "type": "git",
     "url": "https://github.com/RovoMe/vscode-treeview-sample.git"
