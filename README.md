@@ -8,5 +8,3 @@ This project showcases a more realistic interaction behavior with Visual Studio 
 - Deleting nodes
 - Filtering results and reloading treeview with updated nodes
 - Downloading and opening files
-
-![treeview interaction sample](./vscode-treeview-interaction-sample.gif)
