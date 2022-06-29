@@ -2,7 +2,7 @@
   "name": "extension-test-trial3",
   "displayName": "extension-test-trial",
   "description": "",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.66.0"
   },
@@ -154,6 +154,6 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-    "extension-test-trial3": "^0.0.2"
+    "extension-test-trial3": "^0.0.3"
   }
 }
