@@ -1,8 +1,8 @@
 {
-  "name": "extension-test-trial2",
+  "name": "extension-test-trial3",
   "displayName": "extension-test-trial",
   "description": "",
-  "version": "0.0.13",
+  "version": "0.0.1",
   "engines": {
     "vscode": "^1.66.0"
   },
