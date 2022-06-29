@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies and build
         run: npm install && npm run build:extension && vsce package
       - name: Move package file to parent
-        run: mv /home/runner/work/testing-vscode/testing-vscode/extension-test-trial3-0.0.1.vsix ..
+        run: mv /home/runner/work/testing-vscode/testing-vscode/extension-test-trial3-0.0.2.vsix ..
       - name: Publish package on NPM
         run: npm publish --access public
         env:
