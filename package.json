@@ -2,7 +2,7 @@
   "name": "extension-test-trial3",
   "displayName": "extension-test-trial",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.66.0"
   },
@@ -18,9 +18,9 @@
   "categories": [
     "Other"
   ],
-  "files": [
-    "extension-test-trial-0.0.2.vsix"
-  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "activationEvents": [
     "onCommand:testtreeview.helloWorld",
     "onView:extension.myTreeView"
