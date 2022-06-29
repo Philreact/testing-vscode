@@ -2,7 +2,7 @@
   "name": "extension-test-trial3",
   "displayName": "extension-test-trial",
   "description": "",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "engines": {
     "vscode": "^1.66.0"
   },
@@ -127,7 +127,6 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "vsce package -o extension.vsix",
     "compile": "webpack",
     "watch": "webpack --watch",
     "build:extension": "tsc",
