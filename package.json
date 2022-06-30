@@ -155,6 +155,6 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-    "extension-test-trial3": "^0.0.5"
+    "extension-test-trial3": "^0.0.10"
   }
 }
