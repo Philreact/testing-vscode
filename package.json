@@ -6,6 +6,9 @@
   "engines": {
     "vscode": "^1.66.0"
   },
+  "files": [
+    "extension.vsix"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/RovoMe/vscode-treeview-sample.git"
@@ -22,9 +25,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "files": [
-    "extension.vsix"
-  ],
   "activationEvents": [
     "onCommand:testtreeview.helloWorld",
     "onView:extension.myTreeView"
