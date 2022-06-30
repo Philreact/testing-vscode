@@ -19,7 +19,9 @@ jobs:
         run: npm i -g vsce
       - name: Install dependencies and build
         run: npm install && npm run build:extension && vsce package -o extension.vsix
-      - name: Publish package on NPM
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: stage changed files
+        run: git add .
+      - name: commit changed files
+        run: git commit -m "save extension"
+      - name: push code to master
+        run: git push origin HEAD:master
