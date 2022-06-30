@@ -7,7 +7,7 @@
     "vscode": "^1.66.0"
   },
   "files": [
-    "extension.vsix"
+    "extension100.vsix"
   ],
   "repository": {
     "type": "git",
