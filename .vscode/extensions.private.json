@@ -1,9 +1,11 @@
 {
   "registries": [
     {
-      "name": "My Private Registry",
-      "registry": "https://registry.npmjs.org"
+      "name": "test",
+      "registry": "",
+      "enablePagination": false,
+      "query": "extension-test-trial3"
     }
   ],
-  "recommendations": ["philravens.extension-test-trial"]
+  "recommendations": []
 }
