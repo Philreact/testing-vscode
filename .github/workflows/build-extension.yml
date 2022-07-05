@@ -29,9 +29,11 @@ jobs:
         uses: canastro/copy-file-action@master
         with:
           source: 'extension.vsix'
-          target: '/downloads/'
+          target: 'extension2.vsix'
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
+      - name: ls 2
+        run: ls
       - name: Step 3 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with:
