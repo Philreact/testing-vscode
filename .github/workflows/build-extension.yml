@@ -29,7 +29,7 @@ jobs:
         uses: canastro/copy-file-action@master
         with:
           source: 'extension.vsix'
-          target: '/downloads/extension.vsix'
+          target: '/downloads/'
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
       - name: Step 3 - Use the Upload Artifact GitHub Action
