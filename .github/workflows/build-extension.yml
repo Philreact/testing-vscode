@@ -19,9 +19,12 @@ jobs:
         run: npm i -g vsce
       - name: Install dependencies and build
         run: npm install && npm run build:extension && vsce package -o extension.vsix
-      - name: stage changed files
-        run: git add .
-      - name: commit changed files
-        run: git commit -m "save extension"
-      - name: push code to master
-        run: git push origin HEAD:master
+      - name: Step 1 - Create a temporary artifact downloads folder
+        run: mkdir downloads
+      - name: Step 2 - Move .vsix file to downloads folder
+        run: mv extension.vsix /downloads/
+      - name: Step 3 - Use the Upload Artifact GitHub Action
+          uses: actions/upload-artifact@v2
+          with: 
+            name: vscode-extension
+            path: downloads
