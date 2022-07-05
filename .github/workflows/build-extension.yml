@@ -21,6 +21,8 @@ jobs:
         run: npm install && npm run build:extension && vsce package -o extension.vsix
       - name: Step 1 - Create a temporary artifact downloads folder
         run: mkdir downloads
+      - name: ls
+        run: ls
       # - name: Step 2 - Move .vsix file to downloads folder
       #   run: cp -R extension.vsix /downloads
       - name: copy file
