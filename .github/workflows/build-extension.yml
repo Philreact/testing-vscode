@@ -21,8 +21,13 @@ jobs:
         run: npm install && npm run build:extension && vsce package -o extension.vsix
       - name: Step 1 - Create a temporary artifact downloads folder
         run: mkdir downloads
-      - name: Step 2 - Move .vsix file to downloads folder
-        run: cp -R extension.vsix /downloads
+      # - name: Step 2 - Move .vsix file to downloads folder
+      #   run: cp -R extension.vsix /downloads
+      - name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+          source: 'extension.vsix'
+          target: '/downloads/extension.vsix'
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
       - name: Step 3 - Use the Upload Artifact GitHub Action
