@@ -2,7 +2,7 @@
   "name": "extension-test-trial3",
   "displayName": "extension-test-trial",
   "description": "",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "engines": {
     "vscode": "^1.66.0"
   },
