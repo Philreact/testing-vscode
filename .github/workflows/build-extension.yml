@@ -3,17 +3,18 @@ name: Extension Release
 on:
   push:
     branches:
-      - qra 
+      - qra
     tags:
       - 'v*'
+
 jobs:
   build:
     runs-on: ubuntu-latest
     on:
       push:
         branches:
-          - qra 
-         tags:
+          - qra
+        tags:
           - 'v*'
     steps:
       - name: Checkout
