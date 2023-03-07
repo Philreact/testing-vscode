@@ -27,8 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ (github.ref.split('/'))[2] }}
-          release_name: Release ${{ (github.ref.split('/'))[2] }}
+          tag_name: ${{ github.event.ref }}
+          release_name: Release ${{ github.event.ref }}
           body: This is a new release of the extension.
           draft: false
           prerelease: false
