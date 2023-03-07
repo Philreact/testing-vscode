@@ -1,21 +1,8 @@
 name: Extension Release
 
-on:
-  push:
-    branches:
-      - qra
-    tags:
-      - 'v*'
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    on:
-      push:
-        branches:
-          - qra
-        tags:
-          - 'v*'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -33,6 +20,12 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        on:
+          push:
+            branches:
+              - qra
+            tags:
+              - 'v*'
         with:
           tag_name: ${{ github.event.ref }}
           release_name: Release ${{ github.event.ref }}
