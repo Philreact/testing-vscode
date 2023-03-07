@@ -1,44 +1,44 @@
-name: Extension Release
+name: Extension
 
 on:
   push:
     branches:
-      - qra 
+      - Feature/qra-gui
     tags:
-      - 'v*'
+      - '*'
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./apps/qra-gui
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
+          node-version: '16.14.0'
           registry-url: 'https://registry.npmjs.org'
-      - name: Install vsce
-        run: npm i -g vsce
-      - name: Install dependencies and build
-        run: npm install && npm run build:extension && vsce package -o extension.vsix
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: install vsce
+        run: npm install --global vsce
+      - name: Install dependencies
+        run: npm ci
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.event.ref }}
-          release_name: Release ${{ github.event.ref }}
-          body: This is a new release of the extension.
-          draft: false
-          prerelease: false
-      - name: Attach VSIX to Release
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
+          NODE_AUTH_TOKEN: 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
+      - name: Install webpack
+        run: npm install webpack
+      - name: build react and extension files
+        run: npm run vscodebuild
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CI: false
+      - name: build package
+        run: vsce package --no-dependencies -o qra-gui.vsix
+        env:
+          CI: false
+      - name: Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./extension.vsix
-          asset_name: extension.vsix
-          asset_content_type: application/vsix
+          name: vscode-extension-qra-gui
+          path: apps/qra-gui/qra-gui.vsix
