@@ -27,8 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.0.0 # Specify the tag name for the release
-          release_name: Release v1.0.0 # Specify the name for the release
+          tag_name: ${{ github.ref.split('/').last }} # Use the tag name of the commit as the tag name for the release
+          release_name: Release ${{ github.ref.split('/').last }}
           body: | # Specify the release notes
             This is the first release of the extension.
           draft: false
