@@ -15,11 +15,12 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      # - name: Install vsce
-      #   run: npm i -g vsce
-      # - name: Install dependencies and build
-      #   run: npm install && npm run build:extension && vsce package
-      - name: Publish package on NPM
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Install vsce
+        run: npm i -g vsce
+      - name: Install dependencies and build
+        run: npm install && npm run build:extension && vsce package -o extension.vsix
+      - name: Step 3 - Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
+        with:
+          name: vscode-extension
+          path: extension.vsix
