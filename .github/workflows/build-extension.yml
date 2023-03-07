@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Install vsce
-        run: npm i -g vsce
+      - name: Install @vscode/vsce
+        run: npm i -g @vscode/vsce
       - name: Install dependencies and build
         run: npm install && npm run build:extension && vsce package -o extension.vsix
       - name: Create GitHub Release
