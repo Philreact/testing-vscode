@@ -2,8 +2,10 @@ name: Extension Release
 
 on:
   push:
-    branches: [master]
-
+    branches:
+      - qra 
+    tags:
+      - 'v*'
 jobs:
   build:
     runs-on: ubuntu-latest
