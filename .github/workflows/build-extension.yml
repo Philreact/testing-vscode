@@ -2,15 +2,13 @@ name: Extension Release
 
 on:
   push:
-    branches: [Feature/qra-gui]
+    branches:
+      - qra 
     tags:
       - 'v*'
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./apps/qra-gui
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,13 +20,13 @@ jobs:
       - name: Install @vscode/vsce
         run: npm i -g @vscode/vsce
       - name: Install dependencies and build
-        run: vsce package --no-dependencies -o qra-gui.vsix
+        run: npm install && npm run build:extension && vsce package -o extension.vsix
       - name: Create GitHub Release
         uses: ncipollo/release-action@v2.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          artifacts: qra-gui.vsix
+          artifacts: extension.vsix
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
