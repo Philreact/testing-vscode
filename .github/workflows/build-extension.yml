@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies and build
         run: npm install && npm run build:extension && vsce package -o extension.vsix
       - name: Create GitHub Release
-        uses: ncipollo/release-action@v2.2.0
+        uses: ncipollo/release-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
